@@ -9,7 +9,6 @@ from django.contrib.auth.models import (
 )
 from django.conf import settings
 from django.db.models import CharField
-from unicodedata import decimal
 
 
 class UserManager(BaseUserManager):

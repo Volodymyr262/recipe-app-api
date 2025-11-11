@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from core.tests.utils import create_user
 
+
 class AdminSiteTests(TestCase):
     """Tests for django admin."""
 

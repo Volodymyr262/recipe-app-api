@@ -5,13 +5,19 @@ from django.contrib.auth import get_user_model
 
 from core.models import Recipe
 
-def create_user(email='user@example.com', password='testpass123', **extra_fields):
+
+def create_user(
+        email='user@example.com',
+        password='testpass123',
+        **extra_fields
+):
     """Helper function to create and return a new user."""
     return get_user_model().objects.create_user(
         email=email,
         password=password,
         **extra_fields,
     )
+
 
 def create_recipe(user, **params):
     defaults = {

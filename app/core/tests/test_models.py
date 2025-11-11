@@ -2,7 +2,6 @@
 Tests for models.
 """
 from decimal import Decimal
-from imghdr import tests
 
 from django.test import TestCase
 from django.contrib.auth import get_user_model
@@ -61,4 +60,3 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(recipe), recipe.title)
-

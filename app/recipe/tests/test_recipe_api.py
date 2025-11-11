@@ -1,8 +1,5 @@
 from decimal import Decimal
 
-from django.template.defaultfilters import title, default
-from lib2to3.btm_utils import rec_test
-
 from django.test import TestCase
 from django.urls import reverse
 
@@ -34,6 +31,7 @@ class PublicRecipeAPITests(TestCase):
         res = self.client.get(RECIPES_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+
 
 class PrivateRecipeAPITests(TestCase):
     """Test authenticated API requests."""
@@ -88,7 +86,7 @@ class PrivateRecipeAPITests(TestCase):
             'time_minutes': 30,
             'price': Decimal('5.99'),
         }
-        res = self.client.post(RECIPES_URL, payload) # /api/recipes/recipe
+        res = self.client.post(RECIPES_URL, payload)  # /api/recipes/recipe
 
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)
         recipe = Recipe.objects.get(id=res.data['id'])
